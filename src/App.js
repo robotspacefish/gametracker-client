@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header/Header';
 import Welcome from './Welcome/Welcome';
+import Login from './Login/Login';
+import Signup from './Signup/Signup';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -11,7 +13,12 @@ function App() {
 
       {/* TODO: if no user is logged in, show welcome page at '/'
       otherwise, re-route to user's collection */}
-      <Welcome />
+
+      <Switch>
+        <Route exact path='/' component={Welcome} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/signup' component={Signup} />
+      </Switch>
     </div>
   );
 }
